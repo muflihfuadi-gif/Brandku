@@ -34,7 +34,12 @@
         dan pertumbuhan bisnis kecil.
       </p>
      
-      <button class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700">Mulai Gratis</button>
+      <button id = "cta-button"
+      class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700">Mulai Gratis</button>
+      <p id="cta-message" 
+      class="mt-4 text-gray-400 font-medium hidden">button clicked!</p>
+      <p id="second_message" 
+      class="mt-4 text-gray-400 font-medium hidden">repeat clicked!</p>
     </section>
 
    
@@ -68,6 +73,30 @@
   <footer class="bg-gray-900 text-gray-400 text-center py-4 text-sm">
     <p>&copy; 2025 BrandKu. All rights reserved.</p>
   </footer>
+
+  <script>
+    const btnMulaigratis = document.querySelector("#cta-button");
+    const messageClicked =document.querySelector("#cta-message");
+    const secondMessage = document.querySelector("#second_message");
+    let counter = 0;
+
+    btnMulaigratis.addEventListener("click", () => {
+      
+      counter++;
+
+      if (counter === 1) {
+        console.log("clicked");
+        messageClicked.classList.remove("hidden");
+      } else if (counter === 2) {
+        console.log("off");
+        btnMulaigratis.classList.add("hidden");
+        secondMessage.classList.remove("hidden");
+      }
+      
+
+    });
+    
+  </script>
 
 </body>
 </html>
